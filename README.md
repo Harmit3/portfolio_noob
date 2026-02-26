@@ -1,1 +1,0 @@
-# portfoli0_noob
