@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     work.html — Work Experience & Projects
+     Portfolio: Harmit Patel | COMP2057-91 Assignment #5
+     NOTE: Table styled 100% via external mycss.css
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Work — Harmit Patel</title>
+
+    <!-- External stylesheet handles ALL table styling on this page -->
+    <link rel="stylesheet" href="mycss.css" />
+  </head>
+
+  <body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+      <div class="nav-inner">
+        <a href="mybio.html" class="nav-logo">harmit.dev</a>
+        <ul class="nav-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="education.html">education</a></li>
+          <li><a href="work.html">work</a></li>
+          <li><a href="hobbies.html">hobbies</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ===== END NAV ===== -->
+
+    <div class="wrapper">
+
+      <!-- ===== PAGE HEADER ===== -->
+      <div class="page-header">
+        <h1>Work &amp; Projects</h1>
+        <p>academic roles and the things i have shipped.</p>
+      </div>
+      <!-- ===== END PAGE HEADER ===== -->
+
+      <!-- ===== EXPERIENCE SECTION ===== -->
+      <section class="section">
+
+        <p class="section-label">experience</p>
+
+        <!-- TA Role 1 -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Teaching Assistant ~ COMP 2310 &amp; COMP 2140</span>
+            <span class="exp-date">Jan 2025 &ndash; present</span>
+          </div>
+          <p class="exp-org">University of Windsor &nbsp;&middot;&nbsp; Supervisors: Dr. Peter Tsin &amp; Dr. Jianguo Lu</p>
+          <p class="exp-desc">
+            Simultaneously TA for two theory courses: <strong>Theoretical Foundations of CS</strong> and
+            <strong>Languages, Grammars &amp; Translators</strong>. Responsibilities include weekly office hours,
+            grading assignments and exams, and one-on-one tutoring for students struggling with abstract concepts
+            like formal proofs, finite automata, and context-free grammars. Mentored 100+ students across both courses.
+          </p>
+          <div class="tags">
+            <span class="tag green">Mathematical Logic</span>
+            <span class="tag green">DFA / NFA / CFG</span>
+            <span class="tag green">Mentoring</span>
+            <span class="tag green">Grading</span>
+            <span class="tag green">Curriculum Support</span>
+          </div>
+        </div>
+
+      </section>
+      <!-- ===== END EXPERIENCE ===== -->
+
+      <!-- ===== PROJECTS TABLE ===== -->
+      <!-- Table is styled entirely by the external stylesheet (.work-table class) -->
+      <section class="section">
+
+        <p class="section-label">projects</p>
+
+        <p>
+          a breakdown of technical projects with stack, type, and key engineering decisions.
+          all projects are built from scratch  no boilerplate generators.
+        </p>
+
+        <!-- Table — all styles come from mycss.css via .work-table -->
+        <table class="work-table">
+
+          <!-- Table header -->
+          <thead>
+            <tr>
+              <th>project</th>
+              <th>stack</th>
+              <th>type</th>
+              <th>what I built / learned</th>
+            </tr>
+          </thead>
+
+          <!-- Table body -->
+          <tbody>
+
+            <!-- Row 1: LeetCloned -->
+            <tr>
+              <td>
+                <strong>LeetCloned</strong><br />
+                <small>coding practice platform</small>
+              </td>
+              <td>
+                <div class="tags">
+                  <span class="tag blue">Next.js</span>
+                  <span class="tag">TypeScript</span>
+                  <span class="tag">Firebase</span>
+                  <span class="tag">Tailwind</span>
+                </div>
+              </td>
+              <td><span class="role-badge proj">full-stack</span></td>
+              <td>
+                SSR with Next.js for fast page loads. Firebase for real-time auth, problem submission
+                tracking, and a global leaderboard. Dynamic problem-solving interface with optimised state.
+              </td>
+            </tr>
+
+            <!-- Row 2: Chatifly -->
+            <tr>
+              <td>
+                <strong>Chatifly</strong><br />
+                <small>real-time messaging app</small>
+              </td>
+              <td>
+                <div class="tags">
+                  <span class="tag purple">Node.js</span>
+                  <span class="tag">Socket.io</span>
+                  <span class="tag blue">React</span>
+                  <span class="tag">Express</span>
+                </div>
+              </td>
+              <td><span class="role-badge proj">full-stack</span></td>
+              <td>
+                Bidirectional real-time messaging via WebSockets (Socket.io). Scalable Node/Express backend
+                managing active connections, user presence detection, and persistent message history.
+              </td>
+            </tr>
+
+            <!-- Row 3: Version Control System -->
+            <tr>
+              <td>
+                <strong>Version Control System</strong><br />
+                <small>git-like CLI tool</small>
+              </td>
+              <td>
+                <div class="tags">
+                  <span class="tag green">JavaScript</span>
+                  <span class="tag">Node.js</span>
+                  <span class="tag">fs API</span>
+                </div>
+              </td>
+              <td><span class="role-badge ta">CLI tool</span></td>
+              <td>
+                Built repo init, file staging, commit snapshots, log and branch management from scratch.
+                Custom hashing mechanism to track file deltas. Object-based snapshot storage mimics how Git works internally.
+              </td>
+            </tr>
+
+            <!-- Row 4: Portfolio Website (this site) -->
+            <tr>
+              <td>
+                <strong>Portfolio Website</strong><br />
+                <small>this site</small>
+              </td>
+              <td>
+                <div class="tags">
+                  <span class="tag green">HTML5</span>
+                  <span class="tag green">CSS3</span>
+                </div>
+              </td>
+              <td><span class="role-badge ra">web</span></td>
+              <td>
+                Hand-coded multi-page portfolio from scratch. External CSS, embedded styles, image maps,
+                accessible forms, semantic HTML, and a fully working blog no frameworks or build tools.
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      </section>
+      <!-- ===== END PROJECTS TABLE ===== -->
+
+      <!-- ===== DETAILED PROJECT WRITEUPS ===== -->
+      <section class="section">
+
+        <p class="section-label">project details</p>
+
+        <!-- LeetCloned detail -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">&#9881; LeetCloned  &nbsp; Full-Stack Coding Platform</span>
+            <span class="exp-date">2023</span>
+          </div>
+          <p class="exp-org">Next.js &nbsp;&middot;&nbsp; TypeScript &nbsp;&middot;&nbsp; Firebase &nbsp;&middot;&nbsp; Tailwind CSS</p>
+          <p class="exp-desc">
+            Developed a high-performance coding platform with a dynamic problem-solving interface, utilising
+            <strong>Next.js</strong> for server-side rendering and optimised page transitions. Integrated
+            <strong>Firebase</strong> for real-time data management, including user authentication, problem
+            submission tracking, and a global leaderboard. The architecture prioritises low-latency UI updates
+            while keeping backend complexity manageable with Firebase's serverless model.
+          </p>
+          <div class="tags">
+            <span class="tag blue">Next.js</span>
+            <span class="tag blue">TypeScript</span>
+            <span class="tag orange">Firebase</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
+
+        <!-- Chatifly detail -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">&#128172; Chatifly &nbsp; Real-Time Communication System</span>
+            <span class="exp-date">2024</span>
+          </div>
+          <p class="exp-org">Node.js &nbsp;&middot;&nbsp; Socket.io &nbsp;&middot;&nbsp; React &nbsp;&middot;&nbsp; Express</p>
+          <p class="exp-desc">
+            Engineered a real-time messaging application supporting <strong>instant message delivery</strong>
+            and bidirectional communication via <strong>Socket.io</strong>. Implemented a scalable backend
+            with Node.js and Express to manage active connections, user presence, and message history. The
+            event-driven architecture handles high connection counts without blocking the event loop.
+          </p>
+          <div class="tags">
+            <span class="tag purple">Node.js</span>
+            <span class="tag purple">Socket.io</span>
+            <span class="tag blue">React</span>
+            <span class="tag">Express</span>
+          </div>
+        </div>
+
+        <!-- VCS detail -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">&#128195; Version Control System &nbsp; CLI Tool</span>
+            <span class="exp-date">2025</span>
+          </div>
+          <p class="exp-org">JavaScript &nbsp;&middot;&nbsp; Node.js &nbsp;&middot;&nbsp; File System (fs) API</p>
+          <p class="exp-desc">
+            Architected a custom <strong>CLI tool</strong> simulating core Git functionalities: repository
+            initialisation, staging files, committing snapshots, log navigation, and branch management.
+            Developed a <strong>robust hashing mechanism</strong> to track file changes and maintain an
+            efficient history of object-based snapshots using the Node.js <em>fs API</em>. This project
+            gave me a deep understanding of how version control systems work under the hood  knowledge that
+            makes me a significantly better git user in collaborative teams.
+          </p>
+          <div class="tags">
+            <span class="tag green">JavaScript</span>
+            <span class="tag green">Node.js</span>
+            <span class="tag">fs API</span>
+            <span class="tag">SHA Hashing</span>
+            <span class="tag">CLI Design</span>
+          </div>
+        </div>
+
+      </section>
+      <!-- ===== END PROJECT DETAILS ===== -->
+
+      <!-- ===== CALL TO ACTION ===== -->
+      <section class="section">
+
+        <p class="section-label">let's work together</p>
+
+        <!-- Using b/strong and i/em tags as required -->
+        <p>
+          I am looking for <strong>summer 2026 internships</strong> and <strong>new grad full-time</strong> roles
+          in software engineering or AI/ML. I bring a rare combination of <em>low-level hardware knowledge</em>
+          (from the diploma) and <em>full-stack + AI skills</em> (from the degree) that most applicants my age do not have.
+        </p>
+
+        <br />
+
+        <!-- CTA buttons -->
+        <div class="social-row">
+          <a class="btn btn-primary" href="mailto:patel62b@uwindsor.ca">hire me &#8594;</a>
+          <a class="btn btn-ghost" href="https://github.com/Harmit3" target="_blank">github &#8599;</a>
+          <a class="btn btn-ghost" href="education.html">education &#8594;</a>
+        </div>
+
+      </section>
+      <!-- ===== END CTA ===== -->
+
+    </div><!-- end .wrapper -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 harmit patel &mdash; comp2057-91 &mdash; uwindsor</span>
+        <ul class="footer-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="education.html">education</a></li>
+          <li><a href="hobbies.html">hobbies</a></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- ===== END FOOTER ===== -->
+
+  </body>
+</html>

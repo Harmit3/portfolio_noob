@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     hobbies.html — Hobbies, Interests & Blog
+     Portfolio: Harmit Patel | COMP2057-91 Assignment #5
+     Includes: 6 images with alt/width/height + HTML image map
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hobbies — Harmit Patel</title>
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="mycss.css" />
+  </head>
+
+  <body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+      <div class="nav-inner">
+        <a href="mybio.html" class="nav-logo">harmit.dev</a>
+        <ul class="nav-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="education.html">education</a></li>
+          <li><a href="work.html">work</a></li>
+          <li><a href="hobbies.html">hobbies</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ===== END NAV ===== -->
+
+    <div class="wrapper">
+
+      <!-- ===== PAGE HEADER ===== -->
+      <div class="page-header">
+        <h1>Hobbies &amp; Interests</h1>
+        <p>the human behind the github commits.</p>
+      </div>
+      <!-- ===== END PAGE HEADER ===== -->
+
+      <!-- ===== INTRO ===== -->
+      <section class="section">
+
+        <p class="section-label">about</p>
+
+        <!-- Paragraph using em and strong as required by rubric -->
+        <p>
+          when I am not in class or writing code, I spend time on things that keep me curious and grounded.
+          a lot of my best ideas have come during a long hike or a late-night gaming session ; the brain
+          needs <em>context switches</em> just as much as a CPU does. here is what that looks like for me.
+        </p>
+
+      </section>
+      <!-- ===== END INTRO ===== -->
+
+      <!-- ===== IMAGE GALLERY ===== -->
+      <!-- Six images with descriptive alt text, explicit width and height -->
+      <section class="section">
+
+        <p class="section-label">things i love</p>
+
+        <!-- Image grid — styled by external CSS .img-grid / .img-card -->
+        <div class="img-grid">
+
+          <!-- Image 1: Coding & open source -->
+          <div class="img-card">
+            <img
+              src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=400&q=70"
+              alt="Laptop showing code editor representing a hobby of open source coding and building personal projects at night"
+              width="400"
+              height="120"
+            />
+            <p class="img-caption">open source hacking</p>
+          </div>
+
+          <!-- Image 2: AI / machine learning -->
+          <div class="img-card">
+            <img
+              src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=400&q=70"
+              alt="Abstract neural network diagram representing an interest in artificial intelligence and deep learning research"
+              width="400"
+              height="120"
+            />
+            <p class="img-caption">AI &amp; deep learning</p>
+          </div>
+
+          <!-- Image 3: Chess / strategy -->
+          <div class="img-card">
+            <img
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=70"
+              alt="Chess board with pieces mid-game representing a love of chess and strategic thinking"
+              width="400"
+              height="120"
+            />
+            <p class="img-caption">chess &amp; strategy</p>
+          </div>
+
+          <!-- Image 4: Hiking -->
+          <div class="img-card">
+            <img
+              src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=400&q=70"
+              alt="Forest trail with sunlight through trees representing a love of hiking on Ontario nature trails"
+              width="400"
+              height="120"
+            />
+            <p class="img-caption">hiking ontario</p>
+          </div>
+
+          <!-- Image 5: Reading -->
+          <div class="img-card">
+            <img
+              src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&q=70"
+              alt="Open book with a coffee cup on a wooden desk representing a passion for reading technical and non-fiction books"
+              width="400"
+              height="120"
+            />
+            <p class="img-caption">reading tech &amp; non-fiction</p>
+          </div>
+
+          <!-- Image 6: Travel -->
+          <div class="img-card">
+            <img
+              src="https://images.unsplash.com/photo-1530521954074-e64f6810b32d?w=400&q=70"
+              alt="City skyline at dusk representing a passion for travel and visiting technology-focused cities around the world"
+              width="400"
+              height="120"
+            />
+            <p class="img-caption">travel &amp; new cities</p>
+          </div>
+
+        </div>
+
+      </section>
+      <!-- ===== END IMAGE GALLERY ===== -->
+
+      <!-- ===== IMAGE MAP SECTION ===== -->
+      <!-- HTML image map with <map> and <area> tags as required -->
+      <section class="section">
+
+        <p class="section-label">clickable portfolio map</p>
+
+        <p>
+          this is an <strong>HTML image map</strong> ~ click different zones of the image to navigate
+          to sections of this portfolio. each region links to a different page.
+        </p>
+
+        <!-- Map container styled by external CSS -->
+        <div class="map-container">
+
+          <!-- Image used for the map with full descriptive alt text -->
+          <img
+            src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=700&q=70"
+            alt="A world map used as a clickable HTML image map. Different regions link to different pages of Harmit Patel's portfolio: home, education, work, and hobbies."
+            width="700"
+            height="350"
+            usemap="#portfolio-map"
+            style="cursor: crosshair;"
+          />
+
+          <!-- ===== IMAGE MAP: 5 clickable areas ===== -->
+          <map name="portfolio-map">
+
+            <!-- Area 1: Top-left → About / Home -->
+            <area
+              shape="rect"
+              coords="0,0,233,175"
+              href="mybio.html"
+              alt="Click to visit the home and about me page"
+              title="home / about me"
+            />
+
+            <!-- Area 2: Top-centre → Education -->
+            <area
+              shape="rect"
+              coords="233,0,466,175"
+              href="education.html"
+              alt="Click to visit the education page showing degrees from UWindsor and Niagara College"
+              title="education"
+            />
+
+            <!-- Area 3: Top-right → Work & Projects -->
+            <area
+              shape="rect"
+              coords="466,0,700,175"
+              href="work.html"
+              alt="Click to visit the work experience and projects page"
+              title="work &amp; projects"
+            />
+
+            <!-- Area 4: Bottom-left → Hobbies (this page) -->
+            <area
+              shape="rect"
+              coords="0,175,350,350"
+              href="hobbies.html"
+              alt="Click to stay on the hobbies and interests page"
+              title="hobbies &amp; writing"
+            />
+
+            <!-- Area 5: Centre circle → GitHub profile -->
+            <area
+              shape="circle"
+              coords="525,260,60"
+              href="https://github.com/Harmit3"
+              target="_blank"
+              alt="Click to open Harmit Patel's GitHub profile at github.com/Harmit3 in a new tab"
+              title="github.com/Harmit3 &#8599;"
+            />
+
+          </map>
+          <!-- ===== END IMAGE MAP ===== -->
+
+          <p class="map-hint">&#9654; click any region to navigate &mdash; the bottom-right circle opens github</p>
+
+        </div>
+
+      </section>
+      <!-- ===== END IMAGE MAP ===== -->
+
+      <!-- ===== PLACES I WANT TO VISIT ===== -->
+      <section class="section">
+
+        <p class="section-label">places i want to visit</p>
+
+        <p>Travel sharpens perspective in a way that no course does. These are the cities i want to get to:</p>
+
+        <!-- Exp-item styling reused for bucket list entries -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">&#127989; Tokyo, Japan</span>
+          </div>
+          <p class="exp-desc">
+            the intersection of technology and culture. every engineer i respect has a japan story.
+            also: the food, the transit system, and the density of innovation in one city is unmatched.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">&#127981; San Francisco, USA</span>
+          </div>
+          <p class="exp-desc">
+            silicon valley. yes, it is expensive and chaotic. but i want to be in the room where the
+            builders are. the concentration of people working on hard problems is a magnet for me.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">&#127988; Zurich, Switzerland</span>
+          </div>
+          <p class="exp-desc">
+            ETH Zurich produces some of the best CS and AI research in the world. i want to visit
+            both for the academic atmosphere and because the alps are right there.
+          </p>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">🚩 Dubai, UAE</span>
+          </div>
+          <p class="exp-desc">
+            a city that built itself in one generation. the ambition of the engineering is inspiring,
+            and the StartUp community there makes it feel like a second home.
+          </p>
+        </div>
+
+      </section>
+      <!-- ===== END BUCKET LIST ===== -->
+
+      <!-- ===== BLOG / WRITING SECTION ===== -->
+      <!-- This page doubles as the blog index as linked from mybio.html -->
+      <section class="section">
+
+        <p class="section-label">writing</p>
+
+        <p>
+          i write occasionally. mostly essays and build logs ; things i wish i had read before
+          learning them the hard way.
+        </p>
+
+        <!-- Blog post 1 link -->
+        <a class="blog-item" href="blog-post1.html">
+          <div class="blog-left">
+            <span class="blog-title">Why teaching theory made me a better engineer</span>
+            <span class="blog-excerpt">TAing COMP 2310 forced me to rebuild mental models I thought I already had.</span>
+          </div>
+          <div class="blog-meta-col">
+            <span class="blog-date">Feb 2026</span>
+            <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag purple">essay</span></div>
+          </div>
+        </a>
+
+        <!-- Blog post 2 link -->
+        <a class="blog-item" href="blog-post2.html">
+          <div class="blog-left">
+            <span class="blog-title">Building a Git clone from scratch</span>
+            <span class="blog-excerpt">What writing a version control system taught me about hashing, trees, and why Git works the way it does.</span>
+          </div>
+          <div class="blog-meta-col">
+            <span class="blog-date">Jan 2026</span>
+            <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag blue">coding</span></div>
+          </div>
+        </a>
+
+        <!-- Blog post 3 link -->
+        <a class="blog-item" href="blog-post3.html">
+          <div class="blog-left">
+            <span class="blog-title">Things I believe (as a CS + AI student in 2026)</span>
+            <span class="blog-excerpt">Opinions on AI, open source, learning in public, and the value of boring technology.</span>
+          </div>
+          <div class="blog-meta-col">
+            <span class="blog-date">Dec 2025</span>
+            <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag green">thoughts</span></div>
+          </div>
+        </a>
+
+      </section>
+      <!-- ===== END BLOG ===== -->
+
+    </div><!-- end .wrapper -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 harmit patel</span>
+        <ul class="footer-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="education.html">education</a></li>
+          <li><a href="work.html">work</a></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- ===== END FOOTER ===== -->
+
+  </body>
+</html>

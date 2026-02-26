@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!-- blog-post3.html | Harmit Patel | COMP2057-91 -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Things I believe — Harmit Patel</title>
+    <link rel="stylesheet" href="mycss.css" />
+    <style>
+      .post-content p { font-size: 0.97rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.3rem; }
+      .post-content h2 { font-size: 1.2rem; font-style: italic; margin: 2rem 0 0.8rem; color: var(--text); font-family: var(--font-serif); }
+      .post-content a { color: var(--text); border-bottom: 1px solid var(--border-hover); }
+      .post-content a:hover { color: var(--green); border-color: var(--green); }
+      /* Beliefs list styling */
+      .beliefs-list { list-style: none; padding: 0; margin: 0; }
+      .beliefs-list li {
+        display: flex; gap: 0.9rem; padding: 0.9rem 0;
+        border-bottom: 1px solid var(--border); font-size: 0.92rem;
+        color: var(--text-muted); line-height: 1.7; align-items: flex-start;
+      }
+      .beliefs-list li:last-child { border-bottom: none; }
+      .belief-num { font-family: var(--font-mono); font-size: 0.64rem; color: var(--text-faint); padding-top: 0.28rem; flex-shrink: 0; width: 22px; }
+    </style>
+  </head>
+  <body>
+
+    <nav>
+      <div class="nav-inner">
+        <a href="mybio.html" class="nav-logo">harmit.dev</a>
+        <ul class="nav-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="education.html">education</a></li>
+          <li><a href="work.html">work</a></li>
+          <li><a href="hobbies.html">hobbies</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="wrapper">
+
+      <div class="page-header">
+        <p style="margin-bottom:1rem;"><a href="hobbies.html" style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);">&#8592; back to writing</a></p>
+        <h1>Things I believe (as a CS + AI student in 2026)</h1>
+        <p style="margin-top:0.6rem;">Dec 2025 &nbsp;&middot;&nbsp; 3 min read &nbsp;&middot;&nbsp; <span class="tag green">thoughts</span></p>
+      </div>
+
+      <article class="post-content section" style="border-top:none;padding-top:0;">
+
+        <p>
+          A running list of things I currently believe. Some will age badly. I am updating it as I learn more.
+        </p>
+
+        <ul class="beliefs-list">
+          <li><span class="belief-num">01</span><span>The fundamentals compound. A deep understanding of algorithms, data structures, and math is worth more over a 10-year career than knowing five more frameworks. Frameworks are temporary. <strong>Thinking skills stay.</strong></span></li>
+          <li><span class="belief-num">02</span><span>AI will not replace engineers who understand <em>why</em> systems work. It will replace engineers who only know <em>how</em> to use specific tools. The gap between those two types is widening fast.</span></li>
+          <li><span class="belief-num">03</span><span>Boring technology wins. Postgres beats whatever new database is trending this month. The excitement around new tools tends to evaporate when you have to debug them in production at 2am.</span></li>
+          <li><span class="belief-num">04</span><span>Having a hardware background makes you a better software engineer. Most CS graduates have never touched embedded systems or networked hardware. That context matters more than people admit.</span></li>
+          <li><span class="belief-num">05</span><span>Learning in public is underrated. Writing about what you are building forces clarity. The act of explaining something reveals gaps you did not know existed. This blog exists for that reason.</span></li>
+          <li><span class="belief-num">06</span><span>Teaching is the best way to learn. If you are a student and you get the chance to TA, take it without hesitation. You will learn more in one semester than you did studying for the exam.</span></li>
+          <li><span class="belief-num">07</span><span>Most software is over-engineered. Simple code that does one thing well is harder to write than complex code that tries to do everything. <strong>Simplicity is a skill, not a shortcut.</strong></span></li>
+          <li><span class="belief-num">08</span><span>Your GitHub matters more than your GPA to most employers. Both matter, but the projects you ship and the code you write are more concrete evidence of ability than any transcript.</span></li>
+          <li><span class="belief-num">09</span><span>Open source is the most important institution in software. The fact that anyone can read and contribute to the code powering modern infrastructure is extraordinary and worth protecting.</span></li>
+        </ul>
+
+        <hr />
+        <p style="font-size:0.8rem;font-family:var(--font-mono);color:var(--text-faint);">last updated: dec 2025. opinions subject to revision.</p>
+
+        <div class="social-row" style="margin-top:1.5rem;">
+          <a href="blog-post2.html" class="btn btn-ghost">&#8592; prev</a>
+          <a href="hobbies.html" class="btn btn-ghost">all posts &#8594;</a>
+        </div>
+
+      </article>
+    </div>
+
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 harmit patel</span>
+        <ul class="footer-links"><li><a href="mybio.html">home</a></li><li><a href="hobbies.html">writing</a></li></ul>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     mybio.html — Home / About Page
+     Portfolio: Harmit Patel | COMP2057-91 Assignment #5
+     Design inspired by: amritwt.me, dhravya.dev, shbz.sh
+     ============================================================ -->
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Page title shown in browser tab -->
+  <title>Harmit Patel — CS + AI @ UWindsor</title>
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <!-- Sticky nav consistent across all four pages -->
+  <nav>
+    <div class="nav-inner">
+
+      <!-- Logo / brand — links home -->
+      <a href="mybio.html" class="nav-logo">harmit.dev</a>
+
+      <!-- Navigation links to the four required pages -->
+      <ul class="nav-links">
+        <li><a href="mybio.html">home</a></li>
+        <li><a href="education.html">education</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="hobbies.html">hobbies</a></li>
+      </ul>
+
+    </div>
+  </nav>
+  <!-- ===== END NAV ===== -->
+
+  <div class="wrapper">
+
+    <!-- ===== HERO / ABOUT ME ===== -->
+    <!-- This is the "sales pitch" section — homepage introduction -->
+    <section class="hero">
+
+      <div class="profile-pic-container">
+        <img src="./profile/me.png" alt="Profile Picture"
+          class="profile-pic" >
+      </div>
+
+      <!-- Status line with animated green dot -->
+      <p class="hero-greeting">
+        <span class="status-dot"></span>
+        windsor, on &mdash; open to internships &amp; new grad roles
+      </p>
+
+      <!-- Main name headline -->
+      <h1>Harmit Patel</h1>
+
+      <!-- Bio paragraph — concise sales pitch -->
+      <p class="hero-bio">
+        cs student at <a href="https://www.uwindsor.ca" target="_blank">University of Windsor</a> with an
+        <strong>AI specialization</strong> and a <strong>minor in mathematics</strong>, expected april 2026.
+        I build full-stack web apps, train ml models, and think a lot about systems design.
+      </p>
+
+      <br />
+
+      <!-- More detail about current role -->
+      <p class="hero-bio">
+        currently: <strong>teaching assistant</strong> for
+        COMP 2140 (Compiler Design). Previously a computer engineering technician from
+        <a href="https://www.niagaracollege.ca" target="_blank">Niagara College</a> with a background
+        in embedded systems, Computer Networking, and IoT; which introduced me to what happens below the abstraction
+        layer.
+      </p>
+    </section>
+    <!-- ===== END HERO ===== -->
+
+    <!-- ===== SKILLS SNAPSHOT ===== -->
+    <section class="section">
+
+      <p class="section-label">skills</p>
+
+      <!-- Languages — proficient -->
+      <div class="skills-grid">
+
+        <div class="skill-group">
+          <span class="skill-group-label">proficient</span>
+          <div class="tags">
+            <span class="tag green">JavaScript</span>
+            <span class="tag green">TypeScript</span>
+            <span class="tag green">Java</span>
+            <span class="tag green">Python</span>
+            <span class="tag green">C</span>
+            <span class="tag green">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-group-label">familiar</span>
+          <div class="tags">
+            <span class="tag orange">C++</span>
+            <span class="tag orange">Rust</span>
+            <span class="tag orange">Assembly</span>
+            <span class="tag orange">MATLAB</span>
+            <span class="tag orange">C#</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-group-label">frontend</span>
+          <div class="tags">
+            <span class="tag blue">React</span>
+            <span class="tag blue">Next.js</span>
+            <span class="tag blue">Angular</span>
+            <span class="tag blue">Tailwind</span>
+            <span class="tag blue">Redux</span>
+            <span class="tag blue">HTML5/CSS3</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <span class="skill-group-label">backend &amp; cloud</span>
+          <div class="tags">
+            <span class="tag purple">Node.js</span>
+            <span class="tag purple">Express</span>
+            <span class="tag purple">NestJS</span>
+            <span class="tag purple">GraphQL</span>
+            <span class="tag purple">AWS</span>
+            <span class="tag purple">Docker</span>
+            <span class="tag purple">Kubernetes</span>
+            <span class="tag purple">Postgres</span>
+            <span class="tag purple">MongoDB</span>
+            <span class="tag purple">Redis</span>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+    <!-- ===== END SKILLS ===== -->
+
+    <!-- ===== FEATURED PROJECTS ===== -->
+    <section class="section">
+
+      <p class="section-label">projects</p>
+
+      <!-- Project 1: LeetCloned -->
+      <a class="project-card" href="https://github.com/Harmit3/leetcloned">
+        <div class="project-icon">&#9881;</div>
+        <div class="project-info">
+          <span class="project-name">LeetCloned</span>
+          <span class="project-desc">Full-stack coding practice platform with SSR, Firebase auth, and a global
+            leaderboard.</span>
+          <div class="tags" style="margin-top: 0.4rem;">
+            <span class="tag blue">Next.js</span>
+            <span class="tag">TypeScript</span>
+            <span class="tag">Firebase</span>
+            <span class="tag">Tailwind</span>
+          </div>
+        </div>
+        <span class="project-arrow">&#8599;</span>
+      </a>
+
+      <!-- Project 2: Chatifly -->
+      <a class="project-card" href="https://github.com/Harmit3/chatifly">
+        <div class="project-icon">&#128172;</div>
+        <div class="project-info">
+          <span class="project-name">Chatifly</span>
+          <span class="project-desc">Real-time messaging app with Socket.io, bidirectional communication, and scalable
+            Node.js backend.</span>
+          <div class="tags" style="margin-top: 0.4rem;">
+            <span class="tag purple">Node.js</span>
+            <span class="tag">Socket.io</span>
+            <span class="tag blue">React</span>
+            <span class="tag">Express</span>
+          </div>
+        </div>
+        <span class="project-arrow">&#8599;</span>
+      </a>
+
+      <!-- Project 3: Version Control System -->
+      <a class="project-card" href="https://github.com/Harmit3/Version-Control-System">
+        <div class="project-icon">&#128195;</div>
+        <div class="project-info">
+          <span class="project-name">Version Control System (CLI)</span>
+          <span class="project-desc">Built a Git-like CLI from scratch — repo init, staging, commits, branching, and
+            object-based snapshots.</span>
+          <div class="tags" style="margin-top: 0.4rem;">
+            <span class="tag green">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">fs API</span>
+          </div>
+        </div>
+        <span class="project-arrow">&#8599;</span>
+      </a>
+
+      <br />
+      <a href="https://github.com/Harmit3/" class="btn btn-ghost">view all work &#8594;</a>
+
+    </section>
+    <!-- ===== END PROJECTS ===== -->
+
+    <!-- ===== BLOG PREVIEW ===== -->
+    <section class="section">
+
+      <p class="section-label">writing</p>
+
+      <!-- Blog post 1 -->
+      <a class="blog-item" href="blog-post1.html">
+        <div class="blog-left">
+          <span class="blog-title">Why teaching theory made me a better engineer</span>
+          <span class="blog-excerpt">TAing COMP 2310 forced me to rebuild mental models I thought I already had.</span>
+        </div>
+        <div class="blog-meta-col">
+          <span class="blog-date">Feb 2026</span>
+          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag purple">essay</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Blog post 3 -->
+      <a class="blog-item" href="blog-post3.html">
+        <div class="blog-left">
+          <span class="blog-title">Things I believe (as a CS + AI student in 2026)</span>
+          <span class="blog-excerpt">Opinions on AI, open source, learning in public, and the value of boring
+            technology.</span>
+        </div>
+        <div class="blog-meta-col">
+          <span class="blog-date">Jan 2026</span>
+          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag green">thoughts</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- Blog post 2 -->
+      <a class="blog-item" href="blog-post2.html">
+        <div class="blog-left">
+          <span class="blog-title">Building a Git clone from scratch</span>
+          <span class="blog-excerpt">What writing a version control system taught me about hashing, trees, and why Git
+            works the way it does.</span>
+        </div>
+        <div class="blog-meta-col">
+          <span class="blog-date">Nov 2025</span>
+          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag blue">coding</span>
+          </div>
+        </div>
+      </a>
+
+      <br />
+      <a href="https://x.com/harmitwt" class="btn btn-ghost">all posts &#8594;</a>
+
+    </section>
+    <!-- ===== END BLOG ===== -->
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section">
+
+      <p class="section-label">contact</p>
+
+      <p>
+        based in <strong>Ontario, Canada</strong>. open to summer 2026 internships, new grad full-time,
+        or interesting research collaborations. best reached by Twitter(now X).
+      </p>
+
+      <!-- Contact details using strong and line breaks as required -->
+
+      <!-- External social / contact links -->
+      <div class="social-row">
+        <a class="social-link" href="https://github.com/Harmit3" target="_blank">&#128279; github</a>
+        <a class="social-link" href="https://www.linkedin.com/in/harmit-p-0720ab194/" target="_blank">&#128279;
+          linkedin</a>
+        <a class="social-link" href="https://x.com/harmitwt" target="_blank">&#128279; twitter / x</a>
+        <a class="social-link" href="mailto:patel62b@uwindsor.ca">&#128279; email</a>
+      </div>
+
+      <br />
+
+      <!-- Navigation helper using italic/em -->
+      <p style="font-size:0.82rem;">
+        <em>explore the site:</em> &nbsp;
+        <a href="education.html">education</a> &nbsp;/&nbsp;
+        <a href="work.html">work &amp; projects</a> &nbsp;/&nbsp;
+        <a href="hobbies.html">hobbies &amp; writing</a>
+      </p>
+
+    </section>
+    <!-- ===== END CONTACT ===== -->
+
+  </div><!-- end .wrapper -->
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links">
+        <li><a href="education.html">education</a></li>
+        <li><a href="work.html">work</a></li>
+        <li><a href="hobbies.html">hobbies</a></li>
+      </ul>
+    </div>
+  </footer>
+  <!-- ===== END FOOTER ===== -->
+
+</body>
+
+</html>

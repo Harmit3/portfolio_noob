@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     education.html — Education Page
+     Portfolio: Harmit Patel | COMP2057-91 Assignment #5
+     USES: Inline CSS + Embedded <style> CSS + External mycss.css
+     ============================================================ -->
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Education — Harmit Patel</title>
+
+    <!-- External stylesheet -->
+    <link rel="stylesheet" href="mycss.css" />
+
+    <!-- ============================================================
+         EMBEDDED (INTERNAL) CSS — education page specific styles
+         ============================================================ -->
+    <style>
+
+      /* Degree card with gradient accent line on top */
+      .degree-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+        background: var(--bg-card);
+        margin-bottom: 1.2rem;
+        position: relative;
+        overflow: hidden;
+        transition: border-color 0.18s;
+      }
+
+      .degree-card:hover { border-color: var(--border-hover); }
+
+      /* Coloured top-edge line per institution */
+      .degree-card.uwindsor::before {
+        content: '';
+        position: absolute; top: 0; left: 0; right: 0; height: 2px;
+        background: linear-gradient(90deg, var(--blue), var(--purple));
+      }
+
+      .degree-card.niagara::before {
+        content: '';
+        position: absolute; top: 0; left: 0; right: 0; height: 2px;
+        background: linear-gradient(90deg, var(--orange), var(--green));
+      }
+
+      .degree-name {
+        font-size: 0.95rem; font-weight: 600; color: var(--text);
+        display: block; margin-bottom: 0.2rem;
+      }
+
+      .degree-school {
+        font-family: var(--font-mono); font-size: 0.71rem;
+        color: var(--text-muted); display: block; margin-bottom: 0.75rem;
+      }
+
+      .degree-badges { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.8rem; }
+
+      .badge {
+        font-family: var(--font-mono); font-size: 0.62rem;
+        padding: 0.12rem 0.5rem; border-radius: 3px; border: 1px solid;
+        letter-spacing: 0.03em;
+      }
+
+      .badge.blue   { color: var(--blue);   border-color: rgba(96,165,250,0.3);  background: rgba(96,165,250,0.06); }
+      .badge.purple { color: var(--purple); border-color: rgba(167,139,250,0.3); background: rgba(167,139,250,0.06); }
+      .badge.green  { color: var(--green);  border-color: rgba(74,222,128,0.3);  background: rgba(74,222,128,0.06); }
+      .badge.orange { color: var(--orange); border-color: rgba(251,146,60,0.3);  background: rgba(251,146,60,0.06); }
+
+      /* Course timeline */
+      .course-timeline { list-style: none; padding: 0; margin: 0; border-left: 1px solid var(--border); padding-left: 1.5rem; }
+
+      .course-timeline li {
+        position: relative; padding: 0.65rem 0;
+        border-bottom: 1px solid var(--border); transition: background 0.18s;
+      }
+
+      .course-timeline li:last-child { border-bottom: none; }
+
+      .course-timeline li::before {
+        content: '';
+        position: absolute; left: -1.65rem; top: 1rem;
+        width: 7px; height: 7px; border-radius: 50%;
+        background: var(--border-hover); border: 1px solid var(--border-hover);
+        transition: background 0.18s;
+      }
+
+      .course-timeline li:hover::before { background: var(--green); border-color: var(--green); }
+
+      .course-code {
+        font-family: var(--font-mono); font-size: 0.67rem;
+        color: var(--blue); letter-spacing: 0.04em; display: block; margin-bottom: 0.1rem;
+      }
+
+      .course-name { font-size: 0.86rem; color: var(--text); font-weight: 500; display: block; margin-bottom: 0.12rem; }
+      .course-note { font-size: 0.77rem; color: var(--text-muted); display: block; }
+
+    </style>
+    <!-- END EMBEDDED CSS -->
+
+  </head>
+
+  <body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav>
+      <div class="nav-inner">
+        <a href="mybio.html" class="nav-logo">harmit.dev</a>
+        <ul class="nav-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="education.html">education</a></li>
+          <li><a href="work.html">work</a></li>
+          <li><a href="hobbies.html">hobbies</a></li>
+        </ul>
+      </div>
+    </nav>
+    <!-- ===== END NAV ===== -->
+
+    <div class="wrapper">
+
+      <!-- ===== PAGE HEADER ===== -->
+      <div class="page-header">
+        <h1>Education</h1>
+        <p>two institutions , one goal . Understand how computers actually work.</p>
+      </div>
+      <!-- ===== END PAGE HEADER ===== -->
+
+      <!-- ===== DEGREES SECTION ===== -->
+      <section class="section">
+
+        <p class="section-label">degrees</p>
+
+        <!-- UWindsor degree card — styled by embedded .degree-card.uwindsor -->
+        <div class="degree-card uwindsor">
+          <span class="degree-name">Bachelor of Computer Science (Honours)</span>
+          <!-- Inline style used to adjust bottom margin on this specific element -->
+          <span class="degree-school" style="margin-bottom: 0.5rem;">
+            University of Windsor &nbsp;&middot;&nbsp; Windsor, ON &nbsp;&middot;&nbsp; Jan 2024 &mdash; Apr 2026
+          </span>
+
+          <!-- Specialization / minor badges from embedded CSS -->
+          <div class="degree-badges">
+            <span class="badge blue">AI Specialization</span>
+            <span class="badge purple">Minor in Mathematics</span>
+            <span class="badge green">In Progress</span>
+          </div>
+
+          <hr style="margin: 0.8rem 0;" />
+
+          <p style="font-size: 0.85rem; margin: 0;">
+            Combining rigorous CS foundations with an <strong>AI specialization</strong> and <strong>math minor</strong>,
+            this degree pushes deep into algorithms, theoretical computation, operating systems, databases,
+            and advanced machine learning. I am one of the few students who also holds a prior technical diploma,
+            which gives me a hardware-to-software perspective most CS-only students lack.
+          </p>
+        </div>
+
+        <!-- Niagara College card — styled by embedded .degree-card.niagara -->
+        <!-- Inline style adds a bottom gap from the next element -->
+        <div class="degree-card niagara" style="margin-top: 0.2rem;">
+          <span class="degree-name">Diploma — Computer Engineering Technician</span>
+          <span class="degree-school">Niagara College &nbsp;&middot;&nbsp; Welland, ON &nbsp;&middot;&nbsp; 2019 &mdash; 2021</span>
+
+          <div class="degree-badges">
+            <span class="badge orange">Embedded Systems</span>
+            <span class="badge orange">Networking &amp; Security</span>
+            <span class="badge orange">IoT</span>
+            <span class="badge green">Completed</span>
+          </div>
+
+          <hr style="margin: 0.8rem 0;" />
+
+          <p style="font-size: 0.85rem; margin: 0;">
+            Two years of hands-on computer engineering: <strong>digital systems, embedded programming, network
+            administration, client-server architecture,</strong> and IoT applications. This diploma is the
+            reason I can debug firmware, configure a switch, and write assembly skills most CS graduates
+            pick up years into industry, if at all.
+          </p>
+        </div>
+
+      </section>
+      <!-- ===== END DEGREES ===== -->
+
+      <!-- ===== UWINDSOR COURSEWORK ===== -->
+      <section class="section">
+
+        <p class="section-label">uwindsor coursework</p>
+
+        <!-- Timeline list styled by embedded .course-timeline -->
+        <ul class="course-timeline">
+
+          <li>
+            <span class="course-code">COMP-4540</span>
+            <span class="course-name">Design and Analysis of Algorithms</span>
+            <span class="course-note">Greedy, dynamic programming, NP-completeness, approximation algorithms.</span>
+          </li>
+
+          <li>
+            <span class="course-code">COMP-2540</span>
+            <span class="course-name">Data Structures and Algorithms</span>
+            <span class="course-note">Trees, graphs, hash tables, sorting, complexity analysis.</span>
+          </li>
+
+          <li>
+            <span class="course-code">COMP-3300</span>
+            <span class="course-name">Operating System Fundamentals</span>
+            <span class="course-note">Process management, memory allocation, file systems, concurrency.</span>
+          </li>
+
+          <li>
+            <span class="course-code">COMP-3150</span>
+            <span class="course-name">Database Management Systems</span>
+            <span class="course-note">Relational algebra, SQL, normalisation, transaction processing.</span>
+          </li>
+
+          <!-- Inline style on AI courses to visually highlight them -->
+          <li style="background: rgba(167,139,250,0.04); border-radius: 4px; padding-left: 0.4rem;">
+            <span class="course-code">COMP-3710</span>
+            <span class="course-name">Artificial Intelligence Concepts &#9733;</span>
+            <span class="course-note">Search algorithms, knowledge representation, planning, machine learning basics.</span>
+          </li>
+
+          <li style="background: rgba(167,139,250,0.04); border-radius: 4px; padding-left: 0.4rem;">
+            <span class="course-code">COMP-4730</span>
+            <span class="course-name">Advanced Topics in AI I — Robotics &#9733;</span>
+            <span class="course-note">Robot kinematics, perception, SLAM, reinforcement learning for robotics.</span>
+          </li>
+
+          <li style="background: rgba(167,139,250,0.04); border-radius: 4px; padding-left: 0.4rem;">
+            <span class="course-code">COMP-4740</span>
+            <span class="course-name">Advanced Topics in AI II — Deep Learning &#9733;</span>
+            <span class="course-note">CNNs, RNNs, Transformers, training pipelines, and model evaluation.</span>
+          </li>
+
+          <li>
+            <span class="course-code">STAT-2920</span>
+            <span class="course-name">Introduction to Probability</span>
+            <span class="course-note">Probability theory, distributions, expectation — foundational for ML.</span>
+          </li>
+
+          <li>
+            <span class="course-code">COMP-2310</span>
+            <span class="course-name">Theoretical Foundations of CS</span>
+            <span class="course-note">Logic, sets, functions, induction, proof techniques. <em>Currently TA for this course.</em></span>
+          </li>
+
+          <li>
+            <span class="course-code">COMP-2140</span>
+            <span class="course-name">Languages, Grammars and Translators</span>
+            <span class="course-note">DFA, NFA, CFGs, pushdown automata, lexers and parsers. <em>Currently TA for this course.</em></span>
+          </li>
+
+        </ul>
+
+      </section>
+      <!-- ===== END COURSEWORK ===== -->
+
+      <!-- ===== ACADEMIC ROLES ===== -->
+      <section class="section">
+
+        <p class="section-label">teaching roles</p>
+
+        <!-- TA role for 2310 -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Teaching Assistant &nbsp;~&nbsp; COMP 2310: Theoretical Foundations of CS</span>
+            <span class="exp-date">Jan 2025 &ndash; Dec 2025</span>
+          </div>
+          <p class="exp-org">University of Windsor &nbsp;&middot;&nbsp; Supervisor: Dr. Peter Tsin</p>
+          <p class="exp-desc">
+            Weekly office hours, grading, and one-on-one tutoring for a large second-year cohort studying
+            formal logic, set theory, functions, and mathematical induction.
+          </p>
+          <div class="tags">
+            <span class="tag green">Math Logic</span>
+            <span class="tag green">Set Theory</span>
+            <span class="tag green">Proof Techniques</span>
+          </div>
+        </div>
+
+        <!-- TA role for 2140 -->
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="exp-title">Teaching Assistant &nbsp;~&nbsp; COMP 2140: Languages, Grammars &amp; Translators</span>
+            <span class="exp-date">Jan 2026 &ndash; present</span>
+          </div>
+          <p class="exp-org">University of Windsor &nbsp;&middot;&nbsp; Supervisor: Dr. Jianguo Lu</p>
+          <p class="exp-desc">
+            Supported students working through finite automata, context-free grammars, and the basics
+            of building compilers and interpreters.
+          </p>
+          <div class="tags">
+            <span class="tag blue">DFA / NFA</span>
+            <span class="tag blue">CFG</span>
+            <span class="tag blue">Compiler Design</span>
+          </div>
+        </div>
+
+      </section>
+      <!-- ===== END ACADEMIC ROLES ===== -->
+
+      <!-- ===== CONTACT / FEEDBACK FORM ===== -->
+      <!-- Required by assignment: form with various input types -->
+      <section class="section">
+
+        <p class="section-label">academic inquiry</p>
+
+        <p>recruiting, research collab, or just a question? fill out the form and i will get back to you.</p>
+
+        <!-- Form wrapper styled by external CSS -->
+        <div class="form-wrap">
+
+          <form action="#" method="post">
+
+            <!-- Two-column row: name + email -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">your name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email">email</label>
+                <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+              </div>
+            </div>
+
+            <!-- Inquiry type dropdown -->
+            <div class="form-group">
+              <label for="inquiry">inquiry type</label>
+              <select id="inquiry" name="inquiry">
+                <option value="">select...</option>
+                <option value="job">internship / new grad role</option>
+                <option value="ta">teaching assistant opportunity</option>
+                <option value="research">research collaboration</option>
+                <option value="general">general question</option>
+              </select>
+            </div>
+
+            <!-- Interest checkboxes -->
+            <div class="form-group">
+              <label>areas of interest</label>
+              <div class="check-group">
+                <label><input type="checkbox" name="interest" value="ai" /> artificial intelligence &amp; deep learning</label>
+                <label><input type="checkbox" name="interest" value="fs" /> full-stack web development</label>
+                <label><input type="checkbox" name="interest" value="systems" /> systems programming &amp; OS</label>
+                <label><input type="checkbox" name="interest" value="embedded" /> embedded systems &amp; IoT</label>
+              </div>
+            </div>
+
+            <!-- How you found this (radio) -->
+            <div class="form-group">
+              <label>how did you find this portfolio?</label>
+              <div class="check-group">
+                <label><input type="radio" name="source" value="linkedin" /> linkedin</label>
+                <label><input type="radio" name="source" value="github" /> github</label>
+                <label><input type="radio" name="source" value="twitter" /> twitter / x</label>
+                <label><input type="radio" name="source" value="referral" /> referral</label>
+              </div>
+            </div>
+
+            <!-- Message textarea -->
+            <div class="form-group">
+              <label for="message">message</label>
+              <textarea id="message" name="message" placeholder="describe the opportunity or your question..."></textarea>
+            </div>
+
+            <!-- Submit button — inline style adds top spacing -->
+            <button type="submit" class="btn btn-primary" style="margin-top: 0.5rem;">
+              send message &#8594;
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+      <!-- ===== END FORM ===== -->
+
+    </div><!-- end .wrapper -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-inner">
+        <span class="footer-copy">&copy; 2026 harmit patel </span>
+        <ul class="footer-links">
+          <li><a href="mybio.html">home</a></li>
+          <li><a href="work.html">work</a></li>
+          <li><a href="hobbies.html">hobbies</a></li>
+        </ul>
+      </div>
+    </footer>
+    <!-- ===== END FOOTER ===== -->
+
+  </body>
+</html>
