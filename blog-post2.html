@@ -1,123 +1,68 @@
 <!DOCTYPE html>
-<!-- blog-post2.html | Harmit Patel | COMP2057-91 -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Building a Git clone from scratch — Harmit Patel</title>
-    <link rel="stylesheet" href="mycss.css" />
-    <style>
-      .post-content p { font-size: 0.97rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.3rem; }
-      .post-content h2 { font-size: 1.2rem; font-style: italic; margin: 2rem 0 0.8rem; color: var(--text); font-family: var(--font-serif); }
-      .post-content blockquote { border-left: 2px solid var(--border-hover); padding-left: 1.2rem; font-style: italic; font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); margin: 1.8rem 0; }
-      .post-content a { color: var(--text); border-bottom: 1px solid var(--border-hover); }
-      .post-content a:hover { color: var(--green); border-color: var(--green); }
-      .post-content code { font-family: var(--font-mono); font-size: 0.82rem; background: var(--bg-subtle); border: 1px solid var(--border); padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--blue); }
-    </style>
-  </head>
-  <body>
-
-    <nav>
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">harmit.dev</a>
-        <ul class="nav-links">
-          <li><a href="index.html">home</a></li>
-          <li><a href="education.html">education</a></li>
-          <li><a href="work.html">work</a></li>
-          <li><a href="hobbies.html">hobbies</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="wrapper">
-
-      <div class="page-header">
-        <p style="margin-bottom:1rem;"><a href="hobbies.html" style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);">&#8592; back to writing</a></p>
-        <h1>Building a Git clone from scratch</h1>
-        <p style="margin-top:0.6rem;">Jan 2026 &nbsp;&middot;&nbsp; 6 min read &nbsp;&middot;&nbsp; <span class="tag blue">coding</span></p>
-      </div>
-
-      <article class="post-content section" style="border-top:none;padding-top:0;">
-
-        <p>
-          I built a version control system CLI in JavaScript using only Node.js and the <code>fs</code> API.
-          No third-party dependencies. The goal was simple: understand how Git actually works by implementing
-          the parts people use every day <code>init</code>, <code>add</code>, <code>commit</code>,
-          <code>log</code>, and <code>branch</code>.
-        </p>
-
-        <h2>How Git stores files</h2>
-
-        <p>
-          The thing that surprised me most is that Git is fundamentally a <strong>content-addressable
-          filesystem</strong>. Every file you commit is stored as a blob whose name is the SHA-1 hash of
-          its contents. That means two files with identical content are stored exactly once, regardless of
-          their filenames or paths. It is elegant and efficient in a way that is not obvious until you build it.
-        </p>
-
-        <p>
-          In my implementation I used Node's built-in <code>crypto</code> module to generate SHA-256 hashes
-          (slightly more modern than Git's SHA-1) and the <code>fs</code> API to write blob objects into a
-          <code>.vcs/objects/</code> directory structured by the first two hex characters of the hash
-          exactly like Git's <code>.git/objects/</code> layout.
-        </p>
-
-        <h2>Commits are just tree snapshots</h2>
-
-        <p>
-          A commit in Git is not a diff. It is a pointer to a <em>tree object</em> that represents the entire
-          state of the working directory at that moment. Each tree entry is either a blob (a file) or another
-          tree (a subdirectory). The tree object is also content-addressed, so if nothing in a directory changes
-          between commits, Git reuses the exact same tree object.
-        </p>
-
-        <blockquote>
-          Implementing this from scratch made me realise that git is not magic , it is just a very well-designed
-          use of hashing and linked lists.
-        </blockquote>
-
-        <p>
-          My commit objects store: a reference to the root tree hash, a parent commit hash (or null for the
-          first commit), a timestamp, and a message. That linked list of commit objects <em>is</em> your branch history.
-        </p>
-
-        <h2>What branching actually is</h2>
-
-        <p>
-          A branch is just a text file containing a commit hash. That is it. When you create a new branch,
-          you are creating a file in <code>.vcs/refs/heads/</code> that points to the current commit.
-          When you make a new commit on that branch, you update the file to point to the new commit hash.
-          <code>HEAD</code> is another text file that stores which branch you are currently on.
-        </p>
-
-        <p>
-          Understanding this made me significantly more confident using Git in team projects. Merge conflicts,
-          rebasing, detached HEAD states none of it is scary once you know what the files look like on disk.
-        </p>
-
-        <h2>Would I recommend building this?</h2>
-
-        <p>
-          Absolutely. It is a weekend-sized project with career-sized returns. Pick any VCS feature you find
-          confusing, implement it yourself, and I promise you will never be confused by it again. The code
-          is on my <a href="https://github.com/Harmit3" target="_blank">GitHub</a> if you want to look around.
-        </p>
-
-        <hr />
-        <div class="social-row">
-          <a href="blog-post1.html" class="btn btn-ghost">&#8592; prev</a>
-          <a href="blog-post3.html" class="btn btn-ghost">next &#8594;</a>
-        </div>
-
-      </article>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Building a Git clone from scratch — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-copy">&copy; 2026 harmit patel</span>
-        <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="hobbies.html">writing</a></li></ul>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>Building a Git clone from scratch</h1>
+      <p style="margin-top:0.6rem;">Jan 2026 &nbsp;·&nbsp; 6 min read &nbsp;·&nbsp; <span class="tag blue">coding</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+      <p>I built a version control system CLI in JavaScript using only Node.js and the <code>fs</code> API. No third-party dependencies. The goal: understand how Git actually works by implementing the parts people use every day — <code>init</code>, <code>add</code>, <code>commit</code>, <code>log</code>, and <code>branch</code>.</p>
+      <h2>How Git stores files</h2>
+      <p>The thing that surprised me most is that Git is fundamentally a <strong>content-addressable filesystem</strong>. Every file you commit is stored as a blob whose name is the SHA-1 hash of its contents. Two files with identical content are stored exactly once, regardless of filename or path — elegant and efficient in a way that isn't obvious until you build it.</p>
+      <p>In my implementation I used Node's built-in <code>crypto</code> module to generate SHA-256 hashes and the <code>fs</code> API to write blob objects into a <code>.vcs/objects/</code> directory — structured by the first two hex characters of the hash, exactly like Git's <code>.git/objects/</code> layout.</p>
+      <h2>Commits are just tree snapshots</h2>
+      <p>A commit in Git is not a diff. It is a pointer to a <em>tree object</em> representing the entire state of the working directory at that moment. Each tree entry is either a blob (a file) or another tree (a subdirectory). The tree object is also content-addressed, so if nothing in a directory changes between commits, Git reuses the exact same tree object.</p>
+      <blockquote>Implementing this from scratch made me realise that Git is not magic — it is just a very well-designed use of hashing and linked lists.</blockquote>
+      <p>My commit objects store: a reference to the root tree hash, a parent commit hash (or null for the first commit), a timestamp, and a message. That linked list of commit objects <em>is</em> your branch history.</p>
+      <h2>What branching actually is</h2>
+      <p>A branch is just a text file containing a commit hash. When you create a new branch, you create a file in <code>.vcs/refs/heads/</code> pointing to the current commit. <code>HEAD</code> is another text file storing which branch you're on. Understanding this made merge conflicts, rebasing, and detached HEAD states completely unscary.</p>
+      <h2>Would I recommend building this?</h2>
+      <p>Absolutely. It's a weekend-sized project with career-sized returns. Pick any VCS feature you find confusing, implement it yourself, and you'll never be confused by it again. The code is on my <a href="https://github.com/Harmit3" target="_blank" rel="noopener">GitHub</a>.</p>
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+        <a href="blog-post1.html" class="btn btn-ghost">← prev</a>
+        <a href="blog-post3.html" class="btn btn-ghost">next →</a>
       </div>
-    </footer>
-
-  </body>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
 </html>

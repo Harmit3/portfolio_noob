@@ -1,112 +1,66 @@
 <!DOCTYPE html>
-<!-- blog-post1.html | Harmit Patel | COMP2057-91 -->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Why teaching theory made me a better engineer — Harmit Patel</title>
-    <link rel="stylesheet" href="mycss.css" />
-    <style>
-      /* Embedded styles for blog post reading experience */
-      .post-content p { font-size: 0.97rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 1.3rem; }
-      .post-content h2 { font-size: 1.2rem; font-style: italic; margin: 2rem 0 0.8rem; color: var(--text); font-family: var(--font-serif); }
-      .post-content blockquote { border-left: 2px solid var(--border-hover); padding-left: 1.2rem; font-style: italic; font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); margin: 1.8rem 0; }
-      .post-content a { color: var(--text); border-bottom: 1px solid var(--border-hover); }
-      .post-content a:hover { color: var(--green); border-color: var(--green); }
-      .post-content code { font-family: var(--font-mono); font-size: 0.82rem; background: var(--bg-subtle); border: 1px solid var(--border); padding: 0.1rem 0.35rem; border-radius: 3px; color: var(--blue); }
-    </style>
-  </head>
-  <body>
-
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-inner">
-        <a href="index.html" class="nav-logo">harmit.dev</a>
-        <ul class="nav-links">
-          <li><a href="index.html">home</a></li>
-          <li><a href="education.html">education</a></li>
-          <li><a href="work.html">work</a></li>
-          <li><a href="hobbies.html">hobbies</a></li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="wrapper">
-
-      <!-- Post header -->
-      <div class="page-header">
-        <p style="margin-bottom:1rem;"><a href="index.html" style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);">&#8592; back to writing</a></p>
-        <h1>Why teaching theory made me a better engineer</h1>
-        <p style="margin-top:0.6rem;">Feb 2026 &nbsp;&middot;&nbsp; 5 min read &nbsp;&middot;&nbsp; <span class="tag purple">essay</span></p>
-      </div>
-
-      <!-- Post body -->
-      <article class="post-content section" style="border-top:none;padding-top:0;">
-
-        <p>
-          When I took the TA position for COMP 2310 Theoretical Foundations of CS . I honestly thought it
-          was going to be about explaining things I already understood. I was wrong. Teaching theory at the
-          rigour required in a second-year course forced me to rebuild mental models I had only ever pattern-matched.
-        </p>
-
-        <h2>The Feynman trap</h2>
-
-        <p>
-          There is a well-known idea: if you cannot explain something simply, you do not understand it. I thought
-          I understood mathematical induction. I had used it in proofs, got full marks. But the first time a student
-          asked me <em>"but why does the base case matter if the inductive step works for all n?"</em> I realised
-          I had been faking it.
-        </p>
-
-        <blockquote>
-          "The first principle is that you must not fool yourself and you are the easiest person to fool."
-          &mdash; Richard Feynman
-        </blockquote>
-
-        <p>
-          That question cost me two hours of real thinking. The answer is obvious once you see it  without a
-          base case you have proved something vacuously, a chain with no anchor. But building the explanation that
-          actually changes how someone thinks? That is a different skill from solving the problem yourself.
-        </p>
-
-        <h2>How it changed the way I write code</h2>
-
-        <p>
-          After a semester of teaching proofs, I started reasoning about my code inductively. Where before I would
-          write a recursive function and test it with a few cases, I now ask: does my base case handle the trivial input?
-          Is my recursive step guaranteed to make progress toward termination? This is just <code>loop invariant</code>
-          thinking, but I only truly got it after teaching proofs to other people.
-        </p>
-
-        <p>
-          Similarly, teaching set theory and relations made me a much better database designer. When you understand
-          what a relation <em>is</em> in the mathematical sense, normalisation stops being a checklist and becomes
-          an obvious consequence of what you are modelling.
-        </p>
-
-        <h2>The takeaway</h2>
-
-        <p>
-          If you get the chance to TA take it. The gaps in your understanding only become visible when you
-          have to be precise enough for someone else. Theory courses are worth the most time you can give them.
-          Everything else, eventually, is just syntax.
-        </p>
-
-        <hr />
-        <div class="social-row">
-          <a href="index.html" class="btn btn-ghost">&#8592; all posts</a>
-          <a href="blog-post2.html" class="btn btn-ghost">next &#8594;</a>
-        </div>
-
-      </article>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why teaching theory made me a better engineer — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-
-    <footer>
-      <div class="footer-inner">
-        <span class="footer-copy">&copy; 2026 harmit patel</span>
-        <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="hobbies.html">writing</a></li></ul>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>Why teaching theory made me a better engineer</h1>
+      <p style="margin-top:0.6rem;">Feb 2026 &nbsp;·&nbsp; 5 min read &nbsp;·&nbsp; <span class="tag purple">essay</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+      <p>When I took the TA position for COMP 2310 Theoretical Foundations of CS, I honestly thought it was going to be about explaining things I already understood. I was wrong. Teaching theory at the rigour required in a second-year course forced me to rebuild mental models I had only ever pattern-matched.</p>
+      <h2>The Feynman trap</h2>
+      <p>There is a well-known idea: if you cannot explain something simply, you do not understand it. I thought I understood mathematical induction. I had used it in proofs, got full marks. But the first time a student asked me <em>"but why does the base case matter if the inductive step works for all n?"</em> I realised I had been faking it.</p>
+      <blockquote>"The first principle is that you must not fool yourself and you are the easiest person to fool." — Richard Feynman</blockquote>
+      <p>That question cost me two hours of real thinking. The answer is obvious once you see it — without a base case you have proved something vacuously, a chain with no anchor. But building the explanation that actually changes how someone thinks is a different skill from solving the problem yourself.</p>
+      <h2>How it changed the way I write code</h2>
+      <p>After a semester of teaching proofs, I started reasoning about my code inductively. Where before I would write a recursive function and test it with a few cases, I now ask: does my base case handle the trivial input? Is my recursive step guaranteed to make progress toward termination? This is just <code>loop invariant</code> thinking, but I only truly got it after teaching proofs to other people.</p>
+      <p>Similarly, teaching set theory and relations made me a much better database designer. When you understand what a relation is in the mathematical sense, normalisation stops being a checklist and becomes an obvious consequence of what you are modelling.</p>
+      <h2>The takeaway</h2>
+      <p>If you get the chance to TA — take it. The gaps in your understanding only become visible when you have to be precise enough for someone else. Theory courses are worth the most time you can give them. Everything else, eventually, is just syntax.</p>
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+        <a href="index.html#writing" class="btn btn-ghost">← all posts</a>
+        <a href="blog-post2.html" class="btn btn-ghost">next →</a>
       </div>
-    </footer>
-
-  </body>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
 </html>

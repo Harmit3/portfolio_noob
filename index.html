@@ -1,92 +1,100 @@
 <!DOCTYPE html>
-<!-- ============================================================
-     index.html — Home / About Page
-     Portfolio: Harmit Patel | COMP2057-91 Assignment #5
-     Design inspired by: amritwt.me, dhravya.dev, shbz.sh
-     ============================================================ -->
+<!-- index.html — Harmit Patel | Professional Portfolio -->
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- Page title shown in browser tab -->
-  <title>Harmit Patel — CS + AI @ UWindsor</title>
-
-  <!-- External stylesheet -->
+  <meta name="description" content="Harmit Patel — CS + AI student at University of Windsor. Full-stack engineer, Teaching Assistant, builder." />
+  <title>Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
   <link rel="stylesheet" href="mycss.css" />
 </head>
-
 <body>
 
-  <!-- ===== NAVIGATION ===== -->
-  <!-- Sticky nav consistent across all four pages -->
+  <!-- NAV -->
   <nav>
     <div class="nav-inner">
-
-      <!-- Logo / brand — links home -->
-      <a href="index.html" class="nav-logo">harmit.dev</a>
-
-      <!-- Navigation links to the four required pages -->
+      <a href="#" class="nav-logo">harmit.dev</a>
       <ul class="nav-links">
-        <li><a href="index.html">home</a></li>
-        <li><a href="education.html">education</a></li>
-        <li><a href="work.html">work</a></li>
-        <li><a href="hobbies.html">hobbies</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#writing">writing</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
-
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
-  <!-- ===== END NAV ===== -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about"      onclick="closeMobile()">about</a>
+    <a href="#experience" onclick="closeMobile()">experience</a>
+    <a href="#projects"   onclick="closeMobile()">projects</a>
+    <a href="#writing"    onclick="closeMobile()">writing</a>
+    <a href="#contact"    onclick="closeMobile()">contact</a>
+  </div>
 
   <div class="wrapper">
 
-    <!-- ===== HERO / ABOUT ME ===== -->
-    <!-- This is the "sales pitch" section — homepage introduction -->
-    <section class="hero">
+    <!-- ═══════════════════════════════════ HERO -->
+    <section class="hero" id="about">
+      <div class="hero-content">
+        <div class="avail-badge">
+          <span class="status-dot"></span>
+          open to internships &amp; new grad — summer / fall 2026
+        </div>
 
-      <div class="profile-pic-container">
-        <img src="./profile/me.png" alt="Profile Picture"
-          class="profile-pic" >
+        <h1>Harmit Patel</h1>
+
+        <p class="hero-bio">
+          CS student at <a href="https://www.uwindsor.ca" target="_blank" rel="noopener">University of Windsor</a>
+          with an <strong>AI specialization</strong> and a <strong>minor in Mathematics</strong>, graduating April 2026.
+          I build full-stack web apps, train ML models, and care about systems design.
+        </p>
+        <p class="hero-bio">
+          Currently <strong>Teaching Assistant</strong> for COMP 2140 (Compiler Design) at UWindsor.
+          Previously a Computer Engineering Technician from
+          <a href="https://www.niagaracollege.ca" target="_blank" rel="noopener">Niagara College</a> —
+          I have a hardware background in embedded systems, networking, and IoT that most CS grads don't.
+        </p>
+
+        <div class="social-row">
+          <a class="social-link" href="https://github.com/Harmit3" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+            github
+          </a>
+          <a class="social-link" href="https://www.linkedin.com/in/harmit-p-0720ab194/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            linkedin
+          </a>
+          <a class="social-link" href="https://x.com/harmitwt" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="13" height="13"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.73-8.835L1.254 2.25H8.08l4.261 5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            twitter
+          </a>
+          <a class="social-link" href="mailto:patel62b@uwindsor.ca">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" width="13" height="13"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            email
+          </a>
+        </div>
       </div>
 
-      <!-- Status line with animated green dot -->
-      <p class="hero-greeting">
-        <span class="status-dot"></span>
-        windsor, on &mdash; open to internships &amp; new grad roles
-      </p>
-
-      <!-- Main name headline -->
-      <h1>Harmit Patel</h1>
-
-      <!-- Bio paragraph — concise sales pitch -->
-      <p class="hero-bio">
-        cs student at <a href="https://www.uwindsor.ca" target="_blank">University of Windsor</a> with an
-        <strong>AI specialization</strong> and a <strong>minor in mathematics</strong>, expected april 2026.
-        I build full-stack web apps, train ml models, and think a lot about systems design.
-      </p>
-
-      <br />
-
-      <!-- More detail about current role -->
-      <p class="hero-bio">
-        currently: <strong>teaching assistant</strong> for
-        COMP 2140 (Compiler Design). Previously a computer engineering technician from
-        <a href="https://www.niagaracollege.ca" target="_blank">Niagara College</a> with a background
-        in embedded systems, Computer Networking, and IoT; which introduced me to what happens below the abstraction
-        layer.
-      </p>
+      <div class="profile-wrap">
+        <div class="profile-pic-container">
+          <img
+            src="https://avatars.githubusercontent.com/u/111548124?v=4"
+            alt="Harmit Patel"
+            class="profile-pic"
+            width="110" height="140"
+          />
+        </div>
+      </div>
     </section>
-    <!-- ===== END HERO ===== -->
 
-    <!-- ===== SKILLS SNAPSHOT ===== -->
-    <section class="section">
-
+    <!-- ═══════════════════════════════════ SKILLS -->
+    <section class="section" id="skills">
       <p class="section-label">skills</p>
-
-      <!-- Languages — proficient -->
       <div class="skills-grid">
-
         <div class="skill-group">
           <span class="skill-group-label">proficient</span>
           <div class="tags">
@@ -98,7 +106,6 @@
             <span class="tag green">SQL</span>
           </div>
         </div>
-
         <div class="skill-group">
           <span class="skill-group-label">familiar</span>
           <div class="tags">
@@ -109,7 +116,6 @@
             <span class="tag orange">C#</span>
           </div>
         </div>
-
         <div class="skill-group">
           <span class="skill-group-label">frontend</span>
           <div class="tags">
@@ -118,10 +124,9 @@
             <span class="tag blue">Angular</span>
             <span class="tag blue">Tailwind</span>
             <span class="tag blue">Redux</span>
-            <span class="tag blue">HTML5/CSS3</span>
+            <span class="tag blue">HTML5 / CSS3</span>
           </div>
         </div>
-
         <div class="skill-group">
           <span class="skill-group-label">backend &amp; cloud</span>
           <div class="tags">
@@ -137,174 +142,224 @@
             <span class="tag purple">Redis</span>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- ═══════════════════════════════════ EXPERIENCE -->
+    <section class="section" id="experience">
+      <p class="section-label">experience</p>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Teaching Assistant</span>
+            <span class="exp-org">University of Windsor &nbsp;·&nbsp; COMP 2140 &amp; COMP 2310</span>
+          </div>
+          <span class="exp-date">Jan 2025 – present</span>
+        </div>
+        <p class="exp-desc">
+          TAing two theory courses: <strong>Languages, Grammars &amp; Translators</strong> (compiler design)
+          and <strong>Theoretical Foundations of CS</strong> (formal proofs, automata). Weekly office hours,
+          grading, and one-on-one tutoring. Mentored 100+ students across both courses.
+        </p>
+        <div class="tags" style="margin-top:0.55rem;">
+          <span class="tag green">DFA / NFA / CFG</span>
+          <span class="tag green">Formal Proofs</span>
+          <span class="tag green">Mentoring</span>
+          <span class="tag green">Curriculum Support</span>
+        </div>
       </div>
 
+      <!-- Education inline -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">BSc Computer Science — AI Specialization</span>
+            <span class="exp-org">University of Windsor &nbsp;·&nbsp; Minor in Mathematics</span>
+          </div>
+          <span class="exp-date">2022 – Apr 2026</span>
+        </div>
+        <p class="exp-desc">
+          Core focus on AI/ML, algorithms, compiler design, and systems. Relevant coursework:
+          Machine Learning (COMP 4740), Artificial Intelligence (COMP 3340), Database Systems (COMP 3150),
+          Theoretical Foundations (COMP 2310), Compiler Design (COMP 2140).
+        </p>
+        <div class="tags" style="margin-top:0.55rem;">
+          <span class="tag blue">AI / ML</span>
+          <span class="tag blue">Algorithms</span>
+          <span class="tag blue">Compiler Design</span>
+          <span class="tag blue">Systems Design</span>
+          <span class="tag blue">Mathematics</span>
+        </div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-header">
+          <div>
+            <span class="exp-title">Diploma — Computer Engineering Technology</span>
+            <span class="exp-org">Niagara College &nbsp;·&nbsp; Welland, Ontario</span>
+          </div>
+          <span class="exp-date">2019 – 2022</span>
+        </div>
+        <p class="exp-desc">
+          Hands-on background in embedded systems, computer networking, IoT, and low-level hardware programming.
+          This is the layer below most CS degrees — it shapes how I think about performance, reliability, and
+          resource constraints.
+        </p>
+        <div class="tags" style="margin-top:0.55rem;">
+          <span class="tag orange">Embedded Systems</span>
+          <span class="tag orange">Networking</span>
+          <span class="tag orange">IoT</span>
+          <span class="tag orange">C / Assembly</span>
+        </div>
+      </div>
     </section>
-    <!-- ===== END SKILLS ===== -->
 
-    <!-- ===== FEATURED PROJECTS ===== -->
-    <section class="section">
-
+    <!-- ═══════════════════════════════════ PROJECTS -->
+    <section class="section" id="projects">
       <p class="section-label">projects</p>
 
-      <!-- Project 1: LeetCloned -->
-      <a class="project-card" href="https://github.com/Harmit3/leetcloned">
-        <div class="project-icon">&#9881;</div>
+      <a class="project-card" href="https://github.com/Harmit3/leetcloned" target="_blank" rel="noopener">
+        <div class="project-icon">⚙</div>
         <div class="project-info">
           <span class="project-name">LeetCloned</span>
-          <span class="project-desc">Full-stack coding practice platform with SSR, Firebase auth, and a global
-            leaderboard.</span>
-          <div class="tags" style="margin-top: 0.4rem;">
+          <span class="project-desc">Full-stack coding practice platform. SSR with Next.js, Firebase auth, real-time leaderboard, and a dynamic problem-solving interface.</span>
+          <div class="tags" style="margin-top:0.45rem;">
             <span class="tag blue">Next.js</span>
             <span class="tag">TypeScript</span>
-            <span class="tag">Firebase</span>
+            <span class="tag orange">Firebase</span>
             <span class="tag">Tailwind</span>
           </div>
         </div>
-        <span class="project-arrow">&#8599;</span>
+        <span class="project-arrow">↗</span>
       </a>
 
-      <!-- Project 2: Chatifly -->
-      <a class="project-card" href="https://github.com/Harmit3/chatifly">
-        <div class="project-icon">&#128172;</div>
+      <a class="project-card" href="https://github.com/Harmit3/chatifly" target="_blank" rel="noopener">
+        <div class="project-icon">💬</div>
         <div class="project-info">
           <span class="project-name">Chatifly</span>
-          <span class="project-desc">Real-time messaging app with Socket.io, bidirectional communication, and scalable
-            Node.js backend.</span>
-          <div class="tags" style="margin-top: 0.4rem;">
+          <span class="project-desc">Real-time messaging app with bidirectional WebSocket communication via Socket.io. Scalable Node/Express backend with user presence detection and persistent message history.</span>
+          <div class="tags" style="margin-top:0.45rem;">
             <span class="tag purple">Node.js</span>
             <span class="tag">Socket.io</span>
             <span class="tag blue">React</span>
             <span class="tag">Express</span>
           </div>
         </div>
-        <span class="project-arrow">&#8599;</span>
+        <span class="project-arrow">↗</span>
       </a>
 
-      <!-- Project 3: Version Control System -->
-      <a class="project-card" href="https://github.com/Harmit3/Version-Control-System">
-        <div class="project-icon">&#128195;</div>
+      <a class="project-card" href="https://github.com/Harmit3/Version-Control-System" target="_blank" rel="noopener">
+        <div class="project-icon">📋</div>
         <div class="project-info">
           <span class="project-name">Version Control System (CLI)</span>
-          <span class="project-desc">Built a Git-like CLI from scratch — repo init, staging, commits, branching, and
-            object-based snapshots.</span>
-          <div class="tags" style="margin-top: 0.4rem;">
+          <span class="project-desc">Git-like CLI built from scratch with zero dependencies. Implements init, staging, commits, log, and branching. SHA-256 content-addressed object store mirrors Git's internal layout.</span>
+          <div class="tags" style="margin-top:0.45rem;">
             <span class="tag green">JavaScript</span>
             <span class="tag">Node.js</span>
             <span class="tag">fs API</span>
+            <span class="tag">SHA-256</span>
           </div>
         </div>
-        <span class="project-arrow">&#8599;</span>
+        <span class="project-arrow">↗</span>
       </a>
 
-      <br />
-      <a href="https://github.com/Harmit3/" class="btn btn-ghost">view all work &#8594;</a>
-
+      <div style="margin-top:1.2rem;">
+        <a href="https://github.com/Harmit3/" target="_blank" rel="noopener" class="btn btn-ghost">all 27 repos on github ↗</a>
+      </div>
     </section>
-    <!-- ===== END PROJECTS ===== -->
 
-    <!-- ===== BLOG PREVIEW ===== -->
-    <section class="section">
-
+    <!-- ═══════════════════════════════════ WRITING -->
+    <section class="section" id="writing">
       <p class="section-label">writing</p>
 
-      <!-- Blog post 1 -->
       <a class="blog-item" href="blog-post1.html">
         <div class="blog-left">
           <span class="blog-title">Why teaching theory made me a better engineer</span>
-          <span class="blog-excerpt">TAing COMP 2310 forced me to rebuild mental models I thought I already had.</span>
+          <span class="blog-excerpt">TAing COMP 2310 forced me to rebuild mental models I thought I already had. The Feynman trap, loop invariants, and why explaining proofs to others is harder than writing them.</span>
         </div>
         <div class="blog-meta-col">
           <span class="blog-date">Feb 2026</span>
-          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag purple">essay</span>
-          </div>
+          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag purple">essay</span></div>
         </div>
       </a>
 
-      <!-- Blog post 3 -->
-      <a class="blog-item" href="blog-post3.html">
-        <div class="blog-left">
-          <span class="blog-title">Things I believe (as a CS + AI student in 2026)</span>
-          <span class="blog-excerpt">Opinions on AI, open source, learning in public, and the value of boring
-            technology.</span>
-        </div>
-        <div class="blog-meta-col">
-          <span class="blog-date">Jan 2026</span>
-          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag green">thoughts</span>
-          </div>
-        </div>
-      </a>
-
-      <!-- Blog post 2 -->
       <a class="blog-item" href="blog-post2.html">
         <div class="blog-left">
           <span class="blog-title">Building a Git clone from scratch</span>
-          <span class="blog-excerpt">What writing a version control system taught me about hashing, trees, and why Git
-            works the way it does.</span>
+          <span class="blog-excerpt">What writing a VCS in vanilla Node.js taught me about content-addressable storage, tree snapshots, and why a branch is just a text file.</span>
         </div>
         <div class="blog-meta-col">
-          <span class="blog-date">Nov 2025</span>
-          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag blue">coding</span>
-          </div>
+          <span class="blog-date">Jan 2026</span>
+          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag blue">coding</span></div>
         </div>
       </a>
 
-      <br />
-      <a href="https://x.com/harmitwt" class="btn btn-ghost">all posts &#8594;</a>
-
+      <a class="blog-item" href="blog-post3.html">
+        <div class="blog-left">
+          <span class="blog-title">Things I believe — as a CS + AI student in 2026</span>
+          <span class="blog-excerpt">Opinions on AI replacing engineers, boring technology winning, why your GitHub matters more than your GPA, and other things I currently hold to be true.</span>
+        </div>
+        <div class="blog-meta-col">
+          <span class="blog-date">Dec 2025</span>
+          <div class="tags" style="justify-content:flex-end;margin-top:0.3rem;"><span class="tag green">thoughts</span></div>
+        </div>
+      </a>
     </section>
-    <!-- ===== END BLOG ===== -->
 
-    <!-- ===== CONTACT ===== -->
-    <section class="section">
-
+    <!-- ═══════════════════════════════════ CONTACT -->
+    <section class="section" id="contact">
       <p class="section-label">contact</p>
-
       <p>
-        based in <strong>Ontario, Canada</strong>. open to summer 2026 internships, new grad full-time,
-        or interesting research collaborations. best reached by Twitter(now X).
+        Based in <strong>Windsor, Ontario</strong>. Looking for summer 2026 internships and new grad
+        full-time roles in software engineering or AI/ML. Best reached by email or Twitter.
       </p>
-
-      <!-- Contact details using strong and line breaks as required -->
-
-      <!-- External social / contact links -->
-      <div class="social-row">
-        <a class="social-link" href="https://github.com/Harmit3" target="_blank">&#128279; github</a>
-        <a class="social-link" href="https://www.linkedin.com/in/harmit-p-0720ab194/" target="_blank">&#128279;
-          linkedin</a>
-        <a class="social-link" href="https://x.com/harmitwt" target="_blank">&#128279; twitter / x</a>
-        <a class="social-link" href="mailto:patel62b@uwindsor.ca">&#128279; email</a>
+      <div class="social-row" style="margin-top:1.4rem;">
+        <a class="btn btn-primary" href="mailto:patel62b@uwindsor.ca">get in touch →</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/harmit-p-0720ab194/" target="_blank" rel="noopener">linkedin ↗</a>
+        <a class="btn btn-ghost" href="https://x.com/harmitwt" target="_blank" rel="noopener">twitter ↗</a>
       </div>
-
-      <br />
-
-      <!-- Navigation helper using italic/em -->
-      <p style="font-size:0.82rem;">
-        <em>explore the site:</em> &nbsp;
-        <a href="education.html">education</a> &nbsp;/&nbsp;
-        <a href="work.html">work &amp; projects</a> &nbsp;/&nbsp;
-        <a href="hobbies.html">hobbies &amp; writing</a>
-      </p>
-
     </section>
-    <!-- ===== END CONTACT ===== -->
 
   </div><!-- end .wrapper -->
 
-  <!-- ===== FOOTER ===== -->
   <footer>
     <div class="footer-inner">
-      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <span class="footer-copy">© 2026 harmit patel</span>
       <ul class="footer-links">
-        <li><a href="education.html">education</a></li>
-        <li><a href="work.html">work</a></li>
-        <li><a href="hobbies.html">hobbies</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#projects">projects</a></li>
+        <li><a href="#contact">contact</a></li>
       </ul>
     </div>
   </footer>
-  <!-- ===== END FOOTER ===== -->
 
+  <script>
+    // Mobile menu
+    const toggle = document.getElementById('navToggle');
+    const menu   = document.getElementById('mobileMenu');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('open');
+      menu.classList.toggle('open');
+    });
+    function closeMobile() {
+      toggle.classList.remove('open');
+      menu.classList.remove('open');
+    }
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks  = document.querySelectorAll('.nav-links a');
+    const observer  = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { threshold: 0.35 });
+    sections.forEach(s => observer.observe(s));
+  </script>
 </body>
-
 </html>
