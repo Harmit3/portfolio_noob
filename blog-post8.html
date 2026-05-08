@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What today’s AI wave means for junior engineers — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>What today’s AI wave means for junior engineers</h1>
+      <p style="margin-top:0.6rem;">May 2026 &nbsp;·&nbsp; detailed blogpost &nbsp;·&nbsp; <span class="tag cyan">career notes</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+
+      <p>The AI wave changes what junior engineers need to prove. It does not remove the need for junior engineers. Instead, it raises the standard for what counts as strong work. Boilerplate is cheaper now. Explanations are easier to get. Small examples can be generated quickly. That means the valuable skills move higher.</p>
+      <h2>Debugging becomes more important</h2>
+      <p>AI can generate code that looks correct but breaks in subtle ways. A junior engineer who can debug carefully becomes more valuable, not less. Debugging requires patience, reading errors, tracing state, checking assumptions, and understanding the system enough to know where to look.</p>
+      <p>This is one reason fundamentals still matter. If you understand data structures, networks, databases, operating systems, and programming-language behavior, you are better at recognizing when generated code does not make sense.</p>
+      <h2>Taste starts to matter earlier</h2>
+      <p>When AI can produce many possible solutions, the engineer has to choose. Which solution is readable? Which one fits the existing codebase? Which one handles edge cases? Which one is overengineered? That judgment is engineering taste.</p>
+      <p>Taste is built by reading good code, building projects, reviewing mistakes, and shipping things that real users can open. It cannot be fully outsourced.</p>
+      <h2>Proof of work is stronger than claims</h2>
+      <p>In the current job market, saying “I know AI” is not enough. A stronger signal is showing projects: a RAG tutor, a deployed full-stack app, a research notebook, a GitHub repo with clear documentation, or a technical blog explaining what was learned.</p>
+      <p>That is why I like portfolios that connect projects to code and writing. The code proves implementation. The writing proves understanding. Together, they are stronger than a keyword list.</p>
+      <blockquote>AI changes the workflow, but it does not replace ownership.</blockquote>
+      <p>For junior engineers, my view is simple: use AI tools, but keep building fundamentals. Ship projects, read code, write about what you learned, and practice explaining tradeoffs. The industry may change fast, but strong engineering habits still compound.</p>
+
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+        <a href="index.html#writing" class="btn btn-ghost">← all posts</a>
+        <a href="blog-post7.html" class="btn btn-ghost">← previous</a>
+      </div>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graph neural networks made images feel different — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>Graph neural networks made images feel different</h1>
+      <p style="margin-top:0.6rem;">Apr 2026 &nbsp;·&nbsp; detailed blogpost &nbsp;·&nbsp; <span class="tag cyan">ml research</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+
+      <p>Most people first learn image classification through grids of pixels and convolutional neural networks. That view makes sense because images are naturally stored as arrays. But graph neural networks introduce a different question: what if an image is not treated only as pixels, but as connected regions?</p>
+      <h2>From pixels to superpixels</h2>
+      <p>Superpixels group nearby pixels into meaningful regions. Instead of treating every pixel independently, the image becomes a set of small regions that preserve local structure. Once those regions exist, they can be turned into a graph. Each superpixel becomes a node, and edges represent adjacency between regions.</p>
+      <p>This changes the way the image feels as data. A chair, cup, or household object is no longer only a rectangular grid. It becomes a relationship structure. The model can reason about regions and connections, not just raw pixel neighborhoods.</p>
+      <h2>Architecture choices become easier to compare</h2>
+      <p>Working with GCN, GAT, and GraphSAGE-style models made architecture differences feel more concrete. A GCN smooths information across neighboring nodes. A GAT learns attention weights so some relationships can matter more than others. GraphSAGE samples and aggregates neighborhood information in a scalable way.</p>
+      <p>These choices are easier to discuss when the data is visual. You can imagine why the edge between two nearby object parts may matter more than an edge connecting background regions. That makes the research more intuitive.</p>
+      <h2>Robotics makes representation important</h2>
+      <p>For robotic perception, representation is not just an academic detail. A robot needs to understand objects in a physical environment, often with clutter, lighting changes, partial views, and different object poses. Superpixel graphs can be useful because they focus on parts and relationships instead of only full-image classification.</p>
+      <p>The project taught me that machine learning is not only about choosing a model. It is also about choosing how to represent the world. The same object can look very different depending on whether you view it as pixels, features, regions, or a graph.</p>
+      <blockquote>Changing the representation changes the questions the model can answer.</blockquote>
+      <p>That is the most important lesson I took from the GNN projects. Better models matter, but better representations can make the whole problem easier to reason about.</p>
+
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+        <a href="index.html#writing" class="btn btn-ghost">← all posts</a>
+        <a href="blog-post5.html" class="btn btn-ghost">← previous</a>
+        <a href="blog-post7.html" class="btn btn-ghost">next →</a>
+      </div>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
+</html>

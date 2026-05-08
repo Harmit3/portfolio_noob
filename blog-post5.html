@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAG is not magic: notes from AlgoMentor — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>RAG is not magic: notes from AlgoMentor</h1>
+      <p style="margin-top:0.6rem;">Mar 2026 &nbsp;·&nbsp; detailed blogpost &nbsp;·&nbsp; <span class="tag cyan">ai systems</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+
+      <p>AlgoMentor is a Socratic AI tutor for data structures and algorithms. The goal was not to build another chatbot that gives direct answers. The goal was to create a system that guides the learner with hints, questions, and structured reasoning so the student still has to think.</p>
+      <h2>Why RAG fits tutoring</h2>
+      <p>Retrieval-augmented generation makes sense for tutoring because the model should not rely only on whatever it remembers. It should retrieve relevant notes, examples, patterns, and explanations before generating a response. In AlgoMentor, the retrieval layer helps connect the user's problem to similar concepts or strategies.</p>
+      <p>The stack used local model tooling with Ollama, Llama 3.2, sentence embeddings, ChromaDB, and Gradio. Each part has a job. Embeddings convert text into searchable vectors. ChromaDB stores and retrieves relevant context. The local model generates the response. Gradio gives a simple interface for testing the tutor.</p>
+      <h2>The hardest part is boundaries</h2>
+      <p>When building an educational AI tool, the model's behavior matters as much as the model's answer. If it gives the full solution immediately, the student may feel helped but learn very little. If it refuses too much, the student gets frustrated. The right balance is to guide.</p>
+      <p>That means prompts need boundaries. The system should ask questions, point to the next step, explain a hint, and only reveal more when the learner needs it. This is much harder than making a normal chatbot because the goal is not maximum convenience. The goal is learning.</p>
+      <h2>Retrieval quality controls answer quality</h2>
+      <p>RAG systems are often described like magic, but they are very dependent on the quality of the retrieved context. If the chunks are weak, the model has weak evidence. If the chunks are too large, the response gets noisy. If the embedding search retrieves the wrong concept, the final answer may sound confident but miss the point.</p>
+      <p>This taught me that AI engineering is not just about calling a model API. It is about data preparation, chunking, search, ranking, prompt design, evaluation, and user experience.</p>
+      <blockquote>A RAG app is only as good as the context it can find and the boundaries it can follow.</blockquote>
+      <p>The biggest lesson from AlgoMentor is that educational AI should not replace struggle completely. It should make struggle productive. A good tutor does not remove the problem. A good tutor helps the student see the next step.</p>
+
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+        <a href="index.html#writing" class="btn btn-ghost">← all posts</a>
+        <a href="blog-post4.html" class="btn btn-ghost">← previous</a>
+        <a href="blog-post6.html" class="btn btn-ghost">next →</a>
+      </div>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
+</html>

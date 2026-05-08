@@ -29,6 +29,15 @@
   --orange:        #fb923c;
   --orange-dim:    rgba(251,146,60,0.07);
   --orange-border: rgba(251,146,60,0.2);
+  --red:            #f87171;
+  --red-dim:        rgba(248,113,113,0.07);
+  --red-border:     rgba(248,113,113,0.22);
+  --cyan:           #22d3ee;
+  --cyan-dim:       rgba(34,211,238,0.07);
+  --cyan-border:    rgba(34,211,238,0.22);
+  --yellow:         #facc15;
+  --yellow-dim:     rgba(250,204,21,0.07);
+  --yellow-border:  rgba(250,204,21,0.22);
   --font-serif:    'DM Serif Display', Georgia, serif;
   --font-mono:     'DM Mono', 'Courier New', monospace;
   --font-sans:     'DM Sans', system-ui, sans-serif;
@@ -216,6 +225,9 @@ nav {
 .tag.blue   { color: var(--blue);   border-color: var(--blue-border);   background: var(--blue-dim); }
 .tag.purple { color: var(--purple); border-color: var(--purple-border); background: var(--purple-dim); }
 .tag.orange { color: var(--orange); border-color: var(--orange-border); background: var(--orange-dim); }
+.tag.red    { color: var(--red);    border-color: var(--red-border);    background: var(--red-dim); }
+.tag.cyan   { color: var(--cyan);   border-color: var(--cyan-border);   background: var(--cyan-dim); }
+.tag.yellow { color: var(--yellow); border-color: var(--yellow-border); background: var(--yellow-dim); }
 
 /* ─── Skills Grid ─── */
 .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3rem; margin-top: 0.2rem; }
@@ -259,6 +271,13 @@ nav {
 .project-desc { font-size: 0.79rem; color: var(--text-muted); line-height: 1.55; display: block; margin: 0; }
 .project-arrow { font-size: 0.85rem; color: var(--text-faint); flex-shrink: 0; transition: color var(--t); }
 .project-card:hover .project-arrow { color: var(--text-muted); }
+.project-action {
+  font-family: var(--font-mono); font-size: 0.58rem; color: var(--green);
+  border: 1px solid var(--green-border); background: var(--green-dim);
+  border-radius: 999px; padding: 0.14rem 0.45rem; white-space: nowrap;
+  align-self: flex-start; margin-left: auto;
+}
+.project-card:hover .project-action { color: var(--text); border-color: var(--border-mid); background: var(--bg-subtle); }
 
 /* ─── Blog Items ─── */
 .blog-item {
@@ -342,5 +361,69 @@ footer { border-top: 1px solid var(--border); padding: 2rem 0; margin-top: 4rem;
   .nav-links { display: none; }
   .nav-toggle { display: flex; }
   .skills-grid { grid-template-columns: 1fr; }
+  .project-action { margin-left: 0; margin-top: 0.2rem; }
   .blog-meta-col { display: none; }
+}
+
+
+/* ─── Highlight Strip / Repo Callout ─── */
+.highlight-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 1rem 0 0.2rem;
+}
+.highlight-pill {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  color: var(--blue);
+  border: 1px solid var(--blue-border);
+  background: var(--blue-dim);
+  padding: 0.24rem 0.62rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.highlight-pill.location {
+  color: var(--green);
+  border-color: var(--green-border);
+  background: var(--green-dim);
+  box-shadow: 0 0 0 1px rgba(74,222,128,0.08) inset;
+}
+.section-headline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+}
+.section-headline .section-label {
+  flex: 1;
+  margin-bottom: 0;
+}
+.repo-count-pill {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  color: var(--yellow);
+  border: 1px solid var(--yellow-border);
+  background: var(--yellow-dim);
+  border-radius: 999px;
+  padding: 0.22rem 0.62rem;
+  white-space: nowrap;
+}
+.repo-count-pill:hover {
+  color: var(--text);
+  border-color: var(--border-mid);
+  background: var(--bg-subtle);
+}
+.location-callout {
+  border: 1px solid var(--green-border);
+  background: var(--green-dim);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+  color: var(--text-muted);
+}
+.location-callout strong { color: var(--green); }
+@media (max-width: 600px) {
+  .section-headline { align-items: flex-start; flex-direction: column; gap: 0.55rem; }
+  .repo-count-pill { white-space: normal; }
 }

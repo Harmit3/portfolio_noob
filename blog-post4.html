@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>What LeetCloned taught me about product engineering — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>What LeetCloned taught me about product engineering</h1>
+      <p style="margin-top:0.6rem;">Mar 2026 &nbsp;·&nbsp; detailed blogpost &nbsp;·&nbsp; <span class="tag cyan">project insight</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+
+      <p>LeetCloned started as a familiar idea: build a coding-practice platform. The important part was not claiming that the idea was new. The important part was treating the clone seriously enough that it became a real product-engineering exercise.</p>
+      <h2>A clone becomes useful when you study the product</h2>
+      <p>Many clone projects fail because they only copy the surface. They recreate colors, buttons, and page layouts, but they do not study why the original product works. A coding platform is more than a problem page. It is a learning workflow: read the prompt, understand examples, write code, test logic, track progress, and return later.</p>
+      <p>That meant the project had to think about authentication, problem storage, user progress, routing, editor experience, and responsive design. Next.js and TypeScript helped structure the frontend. Firebase handled authentication and database needs. Tailwind made it faster to keep the interface clean without spending all the time on CSS.</p>
+      <h2>The editor is the product</h2>
+      <p>In a coding-practice platform, the editor is not just another component. It is the center of the experience. If the editor feels awkward, the whole app feels weak. The problem statement, constraints, examples, and actions around the editor need to feel clear.</p>
+      <p>This taught me that product engineering is not only about “does the feature exist?” It is about how the feature feels when someone uses it repeatedly. Small details matter: loading states, empty states, disabled buttons, clear problem organization, and predictable navigation.</p>
+      <h2>Deployment changes the standard</h2>
+      <p>When a project only runs locally, it is easy to ignore broken flows. Once it is deployed, every rough edge becomes more visible. Environment variables, routing issues, authentication redirects, mobile layout, and small UI bugs start to matter.</p>
+      <p>That is why the Vercel deployment was important. It forced the project to move from “finished on my machine” to “someone else can open it.” That is a different standard.</p>
+      <h2>Scope control was the hardest lesson</h2>
+      <p>The temptation with a coding platform is to add endless features: more problems, contests, comments, submissions, analytics, discussion boards, and admin dashboards. But a portfolio project becomes stronger when the core loop is complete instead of half-building everything.</p>
+      <blockquote>Ten polished problems with a clean workflow are better than fifty unfinished ideas.</blockquote>
+      <p>LeetCloned taught me that good engineering is not only about adding. It is also about cutting scope, finishing the main path, and making sure the product can be understood quickly by someone opening the codebase for the first time.</p>
+
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+        <a href="index.html#writing" class="btn btn-ghost">← all posts</a>
+        <a href="blog-post3.html" class="btn btn-ghost">← previous</a>
+        <a href="blog-post5.html" class="btn btn-ghost">next →</a>
+      </div>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
+</html>
