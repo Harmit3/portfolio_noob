@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research log: what OpenVLA taught me about prompt sensitivity — Harmit Patel</title>
+  <link rel="icon" type="image/png" href="https://avatars.githubusercontent.com/u/111548124?v=4" />
+  <link rel="stylesheet" href="mycss.css" />
+</head>
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">harmit.dev</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">about</a></li>
+        <li><a href="index.html#experience">experience</a></li>
+        <li><a href="index.html#projects">projects</a></li>
+        <li><a href="index.html#writing">writing</a></li>
+        <li><a href="index.html#contact">contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html#about">about</a>
+    <a href="index.html#experience">experience</a>
+    <a href="index.html#projects">projects</a>
+    <a href="index.html#writing">writing</a>
+    <a href="index.html#contact">contact</a>
+  </div>
+  <div class="wrapper">
+    <div class="page-header">
+      <p style="margin-bottom:1rem;"><a href="index.html#writing" style="font-family:var(--font-mono);font-size:0.7rem;color:var(--text-muted);">← back to writing</a></p>
+      <h1>Research log: what OpenVLA taught me about prompt sensitivity</h1>
+      <p style="margin-top:0.6rem;">Oct 2026 &nbsp;·&nbsp; project vlog &nbsp;·&nbsp; <span class="tag purple">research log</span></p>
+    </div>
+    <article class="post-content section" style="border-top:none;padding-top:0;">
+
+      <p>Most of my projects were built to ship. The OpenVLA project was different: it was built to answer one question properly. If the scene stays exactly the same but I change the wording of the instruction, does a robot-action model still predict the same action?</p>
+      <h2>The setup</h2>
+      <p>I used OpenVLA-7B with BridgeData images and tested four prompt styles on every image: a normal instruction, a paraphrase, a contradictory instruction, and a neutral one. I ran two experiment branches. The first used 40 manually curated trajectories (80 images, initial and final frames). The second used 50 automatically sampled trajectories from the scripted archive.</p>
+      <h2>What I found</h2>
+      <p>Paraphrases stayed closest to the normal prompt, which is the result you hope for. Contradictory and neutral prompts caused larger drift in the predicted action. In the manual set, the average drift on initial frames went from about 0.028 for paraphrases to about 0.045 for neutral prompts. Final-state images were generally more fragile than initial-state images, so the model was less stable exactly when the task was nearly finished.</p>
+      <p>In the auto-sampled set the gaps were smaller and not perfectly ordered, which is a good reminder that one clean pattern in one dataset is not a law.</p>
+      <h2>What the project taught me</h2>
+      <p>First, evaluation is engineering. The valuable part was not running inference once. It was automating runs, tracking experiments, writing out CSVs, computing bootstrap confidence intervals, and generating figures so that anyone could rerun the pipeline and get the same numbers.</p>
+      <p>Second, failure analysis beats a headline number. The most interesting rows were the failure cases, because they showed which scenes and wording made the model unreliable.</p>
+      <p>Third, honest reporting matters. Some comparisons were close, and I kept them in the write-up instead of hiding them.</p>
+      <blockquote>A model that works on your prompt is a demo. A model that works when the prompt changes is a system.</blockquote>
+      <p>The full code, results, and reports are in the <a href="https://github.com/Harmit3/OpenVLA" target="_blank" rel="noopener">OpenVLA repository</a>.</p>
+
+      <hr />
+      <div style="display:flex;gap:0.5rem;margin-top:0.5rem;flex-wrap:wrap;">
+        <a href="index.html#writing" class="btn btn-ghost">← all posts</a>
+        <a href="blog-post8.html" class="btn btn-ghost">← previous</a>
+        <a href="blog-post10.html" class="btn btn-ghost">next →</a>
+      </div>
+    </article>
+  </div>
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-copy">&copy; 2026 harmit patel</span>
+      <ul class="footer-links"><li><a href="index.html">home</a></li><li><a href="index.html#writing">writing</a></li></ul>
+    </div>
+  </footer>
+  <script>
+    const t=document.getElementById("navToggle"),m=document.getElementById("mobileMenu");
+    t.addEventListener("click",()=>{t.classList.toggle("open");m.classList.toggle("open");});
+  </script>
+</body>
+</html>
